@@ -1,41 +1,48 @@
-import React from "react";
+import React, { useRef } from "react";
+import BackgroundScene from "../components/BackgroundScene";
 
 const projects = [
   {
     name: "Wavemood",
-    tagline: "Music playlist app",
-    problem: "A placeholder description for Wavemood.",
-    role: "Full‑stack development",
+    tagline: "Music playlist app case study",
     link: "/Spotify_Wavemood.pdf",
-    gradient: "from-pink-500 to-purple-500",
-    image: "/wavemood-screenshot.jpg",
   },
   {
     name: "Zepto Product Teardown",
-    tagline: "Product teardown case study",
-    problem: "Analyze the Zepto product and document findings.",
-    role: "Full‑stack development",
+    tagline: "Cart pricing and fee transparency case study",
     link: "/zepto-teardown.pdf",
-    gradient: "from-green-500 to-blue-500",
-    image: "/zepto-screenshot.jpg",
   },
 ];
 
 export default function Projects() {
+  const sectionRef = useRef(null);
   return (
-    <section id="projects" className="py-12">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8">Projects</h2>
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="relative w-full min-h-screen flex items-center justify-center py-12 overflow-hidden"
+    >
+      {/* Re‑use the same animated background as other sections */}
+      <BackgroundScene type="hero" containerRef={sectionRef} />
+
+      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          Projects
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((proj) => (
             <div
               key={proj.name}
-              className={`bg-gradient-to-r ${proj.gradient} rounded-lg p-6 text-white`}
+              className="bg-white/10 backdrop-blur rounded-xl p-6 text-white border border-white/20"
             >
-              <img src={proj.image} alt={proj.name} className="mb-4 w-full h-48 object-cover rounded" />
-              <h3 className="text-xl font-semibold">{proj.name}</h3>
-              <p className="mb-2">{proj.tagline}</p>
-              <a href={proj.link} className="inline-block mt-2 underline">
+              <h3 className="text-2xl font-semibold mb-2">{proj.name}</h3>
+              <p className="mb-4">{proj.tagline}</p>
+              <a
+                href={proj.link}
+                className="inline-block underline hover:text-gray-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Case Study
               </a>
             </div>

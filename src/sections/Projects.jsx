@@ -4,12 +4,20 @@ import BackgroundScene from "../components/BackgroundScene";
 const projects = [
   {
     name: "Wavemood",
-    tagline: "Music playlist app case study",
+    featured: "FEATURED CASE STUDY",
+    title: "WAVEMOOD",
+    description: "SPOTIFY-API POWERED MOOD-BASED MUSIC DISCOVERY",
+    problem: "Users experience choice paralysis when filtering through millions of tracks on standard streaming platforms.",
+    role: "Product Manager (API Specification, UX Flow Architecture, Mock Recommendation Logic)",
     link: "/Spotify_Wavemood.pdf",
   },
   {
     name: "Zepto Product Teardown",
-    tagline: "Cart pricing and fee transparency case study",
+    featured: "FEATURED CASE STUDY",
+    title: "ZEPTO TEARDOWN",
+    description: "CART PRICING AND FEE TRANSPARENCY IN QUICK COMMERCE",
+    problem: "Shoppers can’t see their running total or fees until the bottom of the cart, so they decide on top-ups without knowing what they’ll pay.",
+    role: "Product Analyst (App Audit, Personas, Journey Mapping, Recommendations, Metrics Framework)",
     link: "/zepto-teardown.pdf",
   },
 ];
@@ -35,8 +43,17 @@ export default function Projects() {
               key={proj.name}
               className="bg-white/10 backdrop-blur rounded-xl p-6 text-white border border-white/20"
             >
-              <h3 className="text-2xl font-semibold mb-2">{proj.name}</h3>
-              <p className="mb-4">{proj.tagline}</p>
+              {/* Featured label */}
+              <p className="text-xs uppercase text-gray-400 mb-1">{proj.featured}</p>
+              {/* Title */}
+              <h3 className="text-2xl font-semibold mb-2">{proj.title}</h3>
+              {/* Short description */}
+              <p className="mb-2 italic">{proj.description}</p>
+              {/* Problem Statement */}
+              <p className="mb-2"><strong>Problem Statement:</strong> {proj.problem}</p>
+              {/* My Role */}
+              <p className="mb-4"><strong>My Role:</strong> {proj.role}</p>
+              {/* Link */}
               <a
                 href={proj.link}
                 className="inline-block underline hover:text-gray-300"

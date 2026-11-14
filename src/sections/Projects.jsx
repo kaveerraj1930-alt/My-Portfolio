@@ -91,6 +91,17 @@ export default function Projects() {
                     {project.role}
                   </p>
                 </div>
+                {project.pdf && (
+                  <a
+                    href={project.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-white border-b border-white/20 pb-1 ml-4 group-hover:border-sunset-coral group-hover:text-sunset-coral transition-all duration-200"
+                  >
+                    <span>View PDF</span>
+                    <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                )}
               </div>
 
               <div>

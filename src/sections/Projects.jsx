@@ -1,130 +1,54 @@
-import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
-import BackgroundScene from '../components/BackgroundScene';
+import React from "react";
+
+const projects = [
+  {
+    name: "Wavemood",
+    tagline: "Music playlist app",
+    problem: "A placeholder description for Wavemood.",
+    role: "Full‑stack development",
+    link: "#",
+    pdf: "/wavemood-case-study.pdf",
+    gradient: "from-pink-500 to-purple-500",
+    image: "/wavemood-screenshot.jpg",
+  },
+  {
+    name: "Zepto Product Teardown",
+    tagline: "Product teardown case study",
+    problem: "Analyze the Zepto product and document findings.",
+    role: "Full‑stack development",
+    link: "#",
+    pdf: "/zepto-teardown.pdf",
+    gradient: "from-green-500 to-blue-500",
+    image: "/zepto-screenshot.jpg",
+  },
+];
 
 export default function Projects() {
-  const sectionRef = useRef(null);
-
-  const projects = [
-    {
-      name: "Wavemood",
-      tagline: "Spotify-API powered mood-based music discovery",
-      problem: "Users experience choice paralysis when filtering through millions of tracks on standard streaming platforms.",
-      role: "Product Manager (API Specification, UX Flow Architecture, Mock Recommendation Logic)",
-      link: "/Spotify_Wavemood.pdf",
-      pdf: "/zepto-teardown.pdf",
-      gradient: "from-sunset-purple to-sunset-coral",
-      image: "/zepto-screenshot.jpg"
-    },
-    {
-      name: "Zepto Product Teardown: Cart Pricing and Fee Transparency",
-      tagline: "A product teardown of Zepto’s cart experience, showing why shoppers see their total and fees late.",
-      problem: "Lack of fee transparency in checkout leads to cart abandonment.",
-      role: "UX Research & Product Analysis",
-      link: "https://canva.link/qbb5yhf6en37a1x",
-      pdf: "/zepto-teardown.pdf",
-      pdf: "/zepto-teardown.pdf",
-      gradient: "from-sunset-purple to-sunset-coral",
-      image: "/zepto-screenshot.jpg"
-    }
-  ];
-
   return (
-    <section
-      id="projects"
-      ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center justify-center py-20 overflow-hidden"
-    >
-      {/* Digital Grid & Mockups Background */}
-      <BackgroundScene type="projects" containerRef={sectionRef} />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
-        
-        {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          className="mb-16 md:mb-20 text-center"
-        >
-          <span className="font-sans font-semibold text-xs tracking-widest text-sunset-coral uppercase block mb-3">
-            Case Studies
-          </span>
-          <h2 className="font-display font-black text-3xl md:text-5xl uppercase tracking-wider text-white">
-            FEATURED <span className="gradient-text">PROJECT</span>
-          </h2>
-        </motion.div>
-
-        {/* Project Card (Centered) */}
-        <div className="flex justify-center w-full max-w-3xl mx-auto">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.8, delay: idx * 0.15, ease: "easeOut" }}
-              whileHover={{ y: -8 }}
-              className="glassmorphism p-8 md:p-10 rounded-2xl border border-white/5 shadow-2xl flex flex-col justify-between hover:border-sunset-coral/30 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] transition-all duration-300 relative group overflow-hidden w-full"
+    <section id="projects" className="py-12">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold mb-8">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((proj) => (
+            <div
+              key={proj.name}
+              className={`bg-gradient-to-r ${proj.gradient} rounded-lg p-6 text-white`}
             >
-              {/* Top border ambient glow indicator */}
-              <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${project.gradient} opacity-50 group-hover:opacity-100 transition-opacity`} />
-              
-              <div>
-                <span className="font-sans font-bold text-xs tracking-widest text-slate-400 uppercase block mb-2">
-                  Featured Case Study
-                </span>
-                <h3 className="font-display font-black text-2xl md:text-3xl text-white uppercase tracking-wide mb-2 group-hover:text-sunset-coral transition-colors duration-300">
-                  {project.name}
-                </h3>
-                <p className="font-sans font-medium text-xs md:text-sm text-sunset-gold tracking-widest uppercase mb-6">
-                  {project.tagline}
-                </p>
-                {project.image && (
-                  <img src={project.image} alt={project.name} className="w-full rounded-md mb-4" />
-                )}
-
-                <div className="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed mb-8">
-                  <p>
-                    <strong className="text-white block text-xs tracking-widest uppercase mb-1">Problem Statement:</strong>
-                    {project.problem}
-                  </p>
-                  <p>
-                    <strong className="text-white block text-xs tracking-widest uppercase mb-1">My Role:</strong>
-                    {project.role}
-                  </p>
-                </div>
-                {project.pdf && (
-                  <a
-                    href={project.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-white border-b border-white/20 pb-1 ml-4 group-hover:border-sunset-coral group-hover:text-sunset-coral transition-all duration-200"
-                  >
-                    <span>View PDF</span>
-                    <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
-                )}
-              </div>
-
-              <div>
-                <a
-                  href={project.link}
-                  target={project.link.startsWith('/') || project.link.startsWith('http') ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-xs md:text-sm font-bold uppercase tracking-widest text-white border-b border-white/20 pb-1 group-hover:border-sunset-coral group-hover:text-sunset-coral transition-all duration-200"
-                >
-                  <span>View Case Study</span>
-                  <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform">→</span>
+              <img src={proj.image} alt={proj.name} className="mb-4 w-full h-48 object-cover rounded" />
+              <h3 className="text-xl font-semibold">{proj.name}</h3>
+              <p className="mb-2">{proj.tagline}</p>
+              <a href={proj.link} className="inline-block mt-2 mr-4 underline">
+                View Case Study
+              </a>
+              {proj.pdf && (
+                <a href={proj.pdf} className="inline-block mt-2 underline">
+                  View PDF
                 </a>
-              </div>
-            </motion.div>
+              )}
+            </div>
           ))}
         </div>
-
       </div>
     </section>
   );
 }
-
-// Force redeploy � dummy change

@@ -51,24 +51,26 @@ export default function Projects() {
               key={proj.name}
               className="bg-white/10 backdrop-blur rounded-xl p-6 text-white border border-white/20"
             >
+              {/* Top gradient border */}
+              <div className="h-1 bg-gradient-to-r from-indigo-500 to-rose-500 rounded-t-lg mb-2"></div>
               {/* Featured label */}
-              <p className="text-xs uppercase text-gray-400 mb-1">{proj.featured}</p>
+              <p className="text-xs uppercase text-gray-400 mb-1 tracking-widest">{proj.featured}</p>
               {/* Title */}
-              <h3 className="text-2xl font-semibold mb-2">{proj.title}</h3>
-              {/* Short description */}
-              <p className="mb-2 italic">{proj.description}</p>
+              <h3 className="text-2xl font-semibold mb-2 text-rose-500">{proj.title}</h3>
+              {/* Subtitle / short description */}
+              <p className="mb-2 italic text-amber-500">{proj.description}</p>
               {/* Problem Statement */}
-              <p className="mb-2"><strong>Problem Statement:</strong> {proj.problem}</p>
+              <p className="mb-2 text-gray-200"><strong className="text-white font-bold">Problem Statement:</strong> {proj.problem}</p>
               {/* My Role */}
-              <p className="mb-4"><strong>My Role:</strong> {proj.role}</p>
+              <p className="mb-4 text-gray-200"><strong className="text-white font-bold">My Role:</strong> {proj.role}</p>
               {/* Link */}
               <a
                 href={proj.link}
-                className="inline-block underline hover:text-gray-300"
+                className="inline-block underline text-rose-500 hover:text-rose-400"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Case Study
+                View Case Study →
               </a>
             </div>
           ))}

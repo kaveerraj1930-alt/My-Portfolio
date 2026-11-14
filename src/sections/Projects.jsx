@@ -23,6 +23,7 @@ export default function Projects() {
       role: "UX Research & Product Analysis",
       link: "https://canva.link/qbb5yhf6en37a1x",
       pdf: "/zepto-teardown.pdf",
+      pdf: "/zepto-teardown.pdf",
       gradient: "from-sunset-purple to-sunset-coral",
       image: "/zepto-screenshot.jpg"
     }
@@ -125,3 +126,5 @@ export default function Projects() {
     </section>
   );
 }
+
+// Force redeploy – dummy change

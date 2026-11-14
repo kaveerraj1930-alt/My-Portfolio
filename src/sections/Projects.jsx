@@ -6,8 +6,7 @@ const projects = [
     tagline: "Music playlist app",
     problem: "A placeholder description for Wavemood.",
     role: "Full‑stack development",
-    link: "#",
-    pdf: "/wavemood-case-study.pdf",
+    link: "/Spotify_Wavemood.pdf",
     gradient: "from-pink-500 to-purple-500",
     image: "/wavemood-screenshot.jpg",
   },
@@ -16,8 +15,7 @@ const projects = [
     tagline: "Product teardown case study",
     problem: "Analyze the Zepto product and document findings.",
     role: "Full‑stack development",
-    link: "#",
-    pdf: "/zepto-teardown.pdf",
+    link: "/zepto-teardown.pdf",
     gradient: "from-green-500 to-blue-500",
     image: "/zepto-screenshot.jpg",
   },
@@ -37,14 +35,9 @@ export default function Projects() {
               <img src={proj.image} alt={proj.name} className="mb-4 w-full h-48 object-cover rounded" />
               <h3 className="text-xl font-semibold">{proj.name}</h3>
               <p className="mb-2">{proj.tagline}</p>
-              <a href={proj.link} className="inline-block mt-2 mr-4 underline">
+              <a href={proj.link} className="inline-block mt-2 underline">
                 View Case Study
               </a>
-              {proj.pdf && (
-                <a href={proj.pdf} className="inline-block mt-2 underline">
-                  View PDF
-                </a>
-              )}
             </div>
           ))}
         </div>

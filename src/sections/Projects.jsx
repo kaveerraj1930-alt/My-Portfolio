@@ -34,8 +34,16 @@ export default function Projects() {
       <BackgroundScene type="hero" containerRef={sectionRef} />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">
-          Projects
+        {/* Small label above main heading */}
+        <p className="text-rose-500 text-sm uppercase tracking-widest mb-2 text-center">
+          CASE STUDIES
+        </p>
+        {/* Main heading */}
+        <h2 className="text-4xl font-bold text-center mb-4">
+          <span className="text-white">FEATURED </span>
+          <span className="bg-gradient-to-r from-violet-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+            PROJECT
+          </span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((proj) => (

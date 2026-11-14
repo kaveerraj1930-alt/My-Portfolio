@@ -12,6 +12,7 @@ export default function Projects() {
       problem: "Users experience choice paralysis when filtering through millions of tracks on standard streaming platforms.",
       role: "Product Manager (API Specification, UX Flow Architecture, Mock Recommendation Logic)",
       link: "/Spotify_Wavemood.pdf",
+      pdf: "/zepto-teardown.pdf",
       gradient: "from-sunset-purple to-sunset-coral",
       image: "/zepto-screenshot.jpg"
     },
@@ -21,6 +22,7 @@ export default function Projects() {
       problem: "Lack of fee transparency in checkout leads to cart abandonment.",
       role: "UX Research & Product Analysis",
       link: "https://canva.link/qbb5yhf6en37a1x",
+      pdf: "/zepto-teardown.pdf",
       gradient: "from-sunset-purple to-sunset-coral",
       image: "/zepto-screenshot.jpg"
     }

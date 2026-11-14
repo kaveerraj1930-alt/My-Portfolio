@@ -12,7 +12,17 @@ export default function Projects() {
       problem: "Users experience choice paralysis when filtering through millions of tracks on standard streaming platforms.",
       role: "Product Manager (API Specification, UX Flow Architecture, Mock Recommendation Logic)",
       link: "/Spotify_Wavemood.pdf",
-      gradient: "from-sunset-purple to-sunset-coral"
+      gradient: "from-sunset-purple to-sunset-coral",
+      image: "/zepto-screenshot.jpg"
+    },
+    {
+      name: "Zepto Product Teardown: Cart Pricing and Fee Transparency",
+      tagline: "A product teardown of Zepto’s cart experience, showing why shoppers see their total and fees late.",
+      problem: "Lack of fee transparency in checkout leads to cart abandonment.",
+      role: "UX Research & Product Analysis",
+      link: "https://canva.link/qbb5yhf6en37a1x",
+      gradient: "from-sunset-purple to-sunset-coral",
+      image: "/zepto-screenshot.jpg"
     }
   ];
 
@@ -67,6 +77,9 @@ export default function Projects() {
                 <p className="font-sans font-medium text-xs md:text-sm text-sunset-gold tracking-widest uppercase mb-6">
                   {project.tagline}
                 </p>
+                {project.image && (
+                  <img src={project.image} alt={project.name} className="w-full rounded-md mb-4" />
+                )}
 
                 <div className="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed mb-8">
                   <p>
